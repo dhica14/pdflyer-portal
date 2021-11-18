@@ -41,10 +41,8 @@ class LoginController extends Controller
 
     public function login()
     {
-        $objDateTime = new DateTime();
-
         return view('login')
-            ->with(['message' => $objDateTime->format('Ymd-H_i_s')]);
+            ->with(['message' => '']);
     }
 
     public function argoAuth(Request $req)
