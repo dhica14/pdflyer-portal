@@ -27,11 +27,11 @@ ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
 
 WORKDIR /var/www/html
+RUN composer global require "laravel/installer"
 
 # githubにアップされないので必要
+WORKDIR /var/www/html/portal
 RUN composer install
-
-RUN composer global require "laravel/installer"
 
 # Laravelで必要になるmodRewriteを有効化する
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
