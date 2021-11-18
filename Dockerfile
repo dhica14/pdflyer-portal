@@ -4,7 +4,7 @@ FROM php:8.0-apache
 COPY ./app/php/php.ini /usr/local/etc/php/
 COPY ./app/apache/*.conf /etc/apache2/sites-enabled/
 
-COPY ./potal/ /var/www/html/potal/
+COPY ./portal/ /var/www/html/portal/
 
 # ミドルウェアインストール
 RUN apt-get update \
