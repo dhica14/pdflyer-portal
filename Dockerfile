@@ -22,8 +22,8 @@ RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
 RUN apt install -y nodejs
 
 # githubにアップされないので必要
-WORKDIR /var/www/html/portal
-RUN composer install
+# WORKDIR /var/www/html/portal
+# RUN composer install
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
