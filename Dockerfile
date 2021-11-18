@@ -38,5 +38,7 @@ RUN /bin/sh -c a2enmod rewrite
 WORKDIR /var/www/html/portal
 RUN composer install
 
-RUN find ./ -type d -exec chmod 755 {} \;
-RUN find ./ -type f -exec chmod 644 {} \;
+RUN chown -R www-data:www-data ./
+
+# RUN find ./ -type d -exec chmod 755 {} \;
+# RUN find ./ -type f -exec chmod 644 {} \;
