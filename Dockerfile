@@ -37,3 +37,6 @@ RUN /bin/sh -c a2enmod rewrite
 # githubにアップされないので必要
 WORKDIR /var/www/html/portal
 RUN composer install
+
+RUN find ./ -type d -exec chmod 755 {} \;
+RUN find ./ -type f -exec chmod 644 {} \;
