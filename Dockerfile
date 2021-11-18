@@ -28,6 +28,9 @@ ENV PATH $PATH:/composer/vendor/bin
 
 WORKDIR /var/www/html
 
+# githubにアップされないので必要
+RUN composer install
+
 RUN composer global require "laravel/installer"
 
 # Laravelで必要になるmodRewriteを有効化する
